@@ -1,30 +1,17 @@
 import React from 'react'
 import { StatusBar, Platform } from 'react-native'
-import telaLogin from './pages/telaLogin'
-import telaBusca from './pages/telaBusca'
+import DrawerNavigatorExample from './app'
 import Description from './pages/Description'
-import generoSports from './pages/generoSports'
 import { StackNavigator } from 'react-navigation'
 
 const App = StackNavigator({
-  telaLogin: {
-    screen: telaLogin
+  Home: {
+    screen: DrawerNavigatorExample
   },
   Description: {
     screen: Description
   },
-  telaBusca: {
-    screen: telaBusca
-  },
-  generoSports: {
-    screen: generoSports
-  },
-
-
 },
-
-
-
 {
   cardStyle: {
     paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight

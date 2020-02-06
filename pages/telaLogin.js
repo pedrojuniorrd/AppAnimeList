@@ -1,11 +1,13 @@
-//This is an example code for NavigationDrawer//
-import React, { Component } from 'react';
-//import react in our code.
-import { Text, View, TextInput, ImageBackground, Image, StyleSheet, TouchableOpacity } from 'react-native';
-// import all basic components
 
-export default class Screen1 extends Component {
-  //Screen1 Component
+import React, { Component } from 'react';
+import { Text, View, TextInput, ImageBackground, Image, StyleSheet, TouchableOpacity } from 'react-native';
+
+//Primeira Tela
+export default class telaLogin extends Component {
+    static navigationOptions = {
+      title: 'telaLogin'
+    }
+
   render() {
 
     return (
@@ -36,7 +38,7 @@ export default class Screen1 extends Component {
 
               <TouchableOpacity style={styles.Gomes}
                 activeOpacity={0.5}
-                onPress={() => this.props.navigation.navigate('Voltar')}
+                onPress={() => this.props.navigation.navigate('telaBusca')}
               >
                 <Image
                   source={require('../images/icon.jpg')}
@@ -57,9 +59,11 @@ export default class Screen1 extends Component {
   }
 }
 
+telaLogin.navigationOptions = {
+  title: 'Login',
+}
 
-
-
+//Estilos
 const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,
