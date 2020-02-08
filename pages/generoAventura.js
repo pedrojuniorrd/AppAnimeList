@@ -1,14 +1,15 @@
 import React from 'react'
 import { TouchableOpacity, View, FlatList, Text, Image, ScrollView } from 'react-native'
+import Description from './Description'
+import {navigation} from 'react-navigation'
 
 
 
 
 
-
-export default class generoSports extends React.PureComponent {
+export default class generoAventura extends React.PureComponent {
   static navigationOptions = {
-    title: 'generoSports'
+    title: 'generoAventura'
   }
 
   state = {
@@ -16,7 +17,7 @@ export default class generoSports extends React.PureComponent {
   }
 
   async componentDidMount() {
-      const response = await fetch('https://kitsu.io/api/edge/anime?filter[genres]=sports');
+      const response = await fetch('https://kitsu.io/api/edge/anime?filter[genres]=adventure');
       const responseJson = await response.json()
       this.setState({ data: responseJson.data })
     
@@ -35,9 +36,9 @@ _renderItem = ({ item }) => {
 }
 
 _onItemPress = (item) => {
-  //this.props.navigation.navigate('Description', { anime:item })
-  //this.props.navigate('Description',{anime:item})
   this.props.navigation.navigate('Seventh', { anime:item })
+  //this.props.navigate('Description',{anime:item})
+ //this.props.navigation.push('Seventh',{anime: item})
  console.log(item)
 }
 

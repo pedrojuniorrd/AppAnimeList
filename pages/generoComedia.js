@@ -6,9 +6,9 @@ import { TouchableOpacity, View, FlatList, Text, Image, ScrollView } from 'react
 
 
 
-export default class generoSports extends React.PureComponent {
+export default class generoComedia extends React.PureComponent {
   static navigationOptions = {
-    title: 'generoSports'
+    title: 'generoComedia'
   }
 
   state = {
@@ -16,7 +16,7 @@ export default class generoSports extends React.PureComponent {
   }
 
   async componentDidMount() {
-      const response = await fetch('https://kitsu.io/api/edge/anime?filter[genres]=sports');
+      const response = await fetch('https://kitsu.io/api/edge/anime?filter[genres]=comedy');
       const responseJson = await response.json()
       this.setState({ data: responseJson.data })
     

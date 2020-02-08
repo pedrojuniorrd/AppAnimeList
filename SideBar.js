@@ -6,10 +6,14 @@ import { createStackNavigator } from 'react-navigation-stack';
 import Screen1 from './pages/telaLogin';
 import Screen2 from './pages/telaBusca';
 import Screen3 from './pages/generoSports';
+import Screen4 from './Description';
 
 
 class NavigationDrawerStructure extends Component {
 
+    static navigationOptions = {
+        title: 'sideBar'
+      }
   //Structure for the navigatin Drawer
   toggleDrawer = () => {
     //Props to open/close the drawer
@@ -51,7 +55,7 @@ const Screen2_StackNavigator = createStackNavigator({
   Second: {
     screen: Screen2,
     navigationOptions: ({ navigation }) => ({
-      title: 'Buscar Anime',
+      title: 'Busca',
       headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
       headerStyle: {
         backgroundColor: '#FF9800',
@@ -62,6 +66,7 @@ const Screen2_StackNavigator = createStackNavigator({
 });
 
 const Screen3_StackNavigator = createStackNavigator({
+    
   //All the screen from the Screen3 will be indexed here
   Third: {
     screen: Screen3,
@@ -76,8 +81,26 @@ const Screen3_StackNavigator = createStackNavigator({
   },
 });
 
+const Screen4_StackNavigator = createStackNavigator({
+    
+  //All the screen from the Screen3 will be indexed here
+  Third: {
+    screen: Screen4,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Demo Screen 3',
+      headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
+      headerStyle: {
+        backgroundColor: '#FF9800',
+      },
+      headerTintColor: '#fff',
+    }),
+  },
+});
+
+
 
 const DrawerNavigatorExample = createDrawerNavigator({
+    
 
   Screen1: {
     //Title
@@ -102,6 +125,25 @@ const DrawerNavigatorExample = createDrawerNavigator({
       
     },
   },
+
+  Screen3: {
+    //Title
+    screen: Screen3_StackNavigator,
+    navigationOptions: {
+      drawerLabel: 'Esportes',
+      
+    },
+  },
+  Screen4: {
+    //Title
+    screen: Screen4_StackNavigator,
+    navigationOptions: {
+      drawerLabel: 'Description',
+      
+    },
+  },
+
+
 
 
 

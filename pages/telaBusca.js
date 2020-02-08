@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+import { Text, View, TextInput, ImageBackground, Image, StyleSheet, TouchableOpacity,ScrollView } from 'react-native';
 
-import { Text, View, TextInput, ImageBackground, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
+
+
+
+ 
 //Tela 2
 export default class telaBusca extends Component {
+  
   static navigationOptions = {
     title: 'telaBusca'
   }
@@ -109,6 +114,7 @@ export default class telaBusca extends Component {
               {this.state.titulo}
             </Text>
 
+            <ScrollView>
             <Text style={{
               backgroundColor: 'gray',
               opacity: 0.8,
@@ -126,9 +132,11 @@ export default class telaBusca extends Component {
             }}>
               {this.state.sinopse}
             </Text>
+            </ScrollView>
 
             <Text style={{
               backgroundColor: 'yellow',
+              position: 'absolute', left: 0, right: 0, bottom: 0
             }}>
               Nota:{(this.state.averageRate / 10).toFixed(1)}/10
                 </Text>
